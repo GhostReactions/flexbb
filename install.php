@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Copyright (C) 2008-2012 FluxBB
+ * Copyright (C) 2008-2012 FlexBB
  * based on code by Rickard Andersson copyright (C) 2002-2008 PunBB
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
 
-// The FluxBB version this script installs
-define('FORUM_VERSION', '1.5.11');
+// The FlexBB version this script installs
+define('FORUM_VERSION', '1.0.0');
 
 define('FORUM_DB_REVISION', 24);
 define('FORUM_SI_REVISION', 2);
@@ -58,7 +58,7 @@ require PUN_ROOT.'lang/'.$install_lang.'/install.php';
 
 if (file_exists(PUN_ROOT.'config.php'))
 {
-	// Check to see whether FluxBB is already installed
+	// Check to see whether FlexBB is already installed
 	include PUN_ROOT.'config.php';
 
 	// If we have the 1.3-legacy constant defined, define the proper 1.4 constant so we don't get an incorrect "need to install" message
@@ -124,7 +124,7 @@ if (!isset($_POST['form_sent']))
 
 	$db_type = $db_name = $db_username = $db_prefix = $username = $email = '';
 	$db_host = 'localhost';
-	$title = $lang_install['My FluxBB Forum'];
+	$title = $lang_install['My FlexBB Forum'];
 	$description = '<p><span>'.$lang_install['Description'].'</span></p>';
 	$default_lang = $install_lang;
 	$default_style = 'Air';
@@ -224,7 +224,7 @@ if (!isset($_POST['form_sent']) || !empty($alerts))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $lang_install['FluxBB Installation'] ?></title>
+<title><?php echo $lang_install['FlexBB Installation'] ?></title>
 <link rel="stylesheet" type="text/css" href="style/<?php echo pun_htmlspecialchars($default_style) ?>.css" />
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -268,7 +268,7 @@ function process_form(the_form)
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span><?php echo $lang_install['FluxBB Installation'] ?></span></h1>
+			<h1><span><?php echo $lang_install['FlexBB Installation'] ?></span></h1>
 			<div id="brddesc"><p><?php echo $lang_install['Welcome'] ?></p></div>
 		</div>
 	</div>
@@ -528,7 +528,7 @@ else
 	}
 
 
-	// Make sure FluxBB isn't already installed
+	// Make sure FlexBB isn't already installed
 	$result = $db->query('SELECT 1 FROM '.$db_prefix.'users WHERE id=1');
 	if ($db->has_rows($result))
 		error(sprintf($lang_install['Existing table error'], $db_prefix, $db_name));
@@ -1639,7 +1639,7 @@ else
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $lang_install['FluxBB Installation'] ?></title>
+<title><?php echo $lang_install['FlexBB Installation'] ?></title>
 <link rel="stylesheet" type="text/css" href="style/<?php echo pun_htmlspecialchars($default_style) ?>.css" />
 </head>
 <body>
@@ -1651,8 +1651,8 @@ else
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span><?php echo $lang_install['FluxBB Installation'] ?></span></h1>
-			<div id="brddesc"><p><?php echo $lang_install['FluxBB has been installed'] ?></p></div>
+			<h1><span><?php echo $lang_install['FlexBB Installation'] ?></span></h1>
+			<div id="brddesc"><p><?php echo $lang_install['FlexBB has been installed'] ?></p></div>
 		</div>
 	</div>
 </div>
@@ -1707,7 +1707,7 @@ else
 		<div class="fakeform">
 			<div class="inform">
 				<div class="forminfo">
-					<p><?php echo $lang_install['FluxBB fully installed'] ?></p>
+					<p><?php echo $lang_install['FlexBB fully installed'] ?></p>
 				</div>
 			</div>
 		</div>
